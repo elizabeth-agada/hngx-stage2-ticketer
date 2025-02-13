@@ -25,7 +25,7 @@ export default function Home() {
         {step === 1 && (
           <div className="space-y-6 mt-6 border border-[#162b36] pt-6 pb-6 px-6 rounded-2xl">
             <div className="text-center mb-6 items-center rounded-2xl border border-[#162b36] bg-[#041E23] opacity-95 p-6">
-              <h3 className="text-2xl font-bold text-[#FAFAFA]">Techember Fest "25</h3>
+              <h3 className="text-2xl font-bold text-[#FAFAFA]">Techember Fest &quot;25</h3>
               <p className="text-sm text-gray-400 w-2/3 mx-auto">
                 Join us for an unforgettable experience at [Event Name]! Secure your spot now.
               </p>
@@ -98,7 +98,7 @@ export default function Home() {
             <p className="text-gray-400">Check your email for a copy or you can download it now.</p>
 
             <div className="mt-6 bg-[#02191D] p-6 rounded-lg border border-[#24A0B5]">
-              <h3 className="text-lg font-semibold">Techember Fest "25</h3>
+              <h3 className="text-lg font-semibold">Techember Fest &quot;25</h3>
               <p className="text-gray-300">8 Runners Road, Ikoyi, Lagos</p>
               <p className="text-gray-300">March 15, 2025 | 7:00 PM</p>
 
