@@ -11,9 +11,9 @@ import html2canvas from "html2canvas";
 const formSchema = z.object({
   fullName: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email"),
-  avatarUrl: z.string().url("Please provide a valid image URL").optional(),
+  avatarUrl: z.string().url("Please provide a valid image URL").min(1, "Profile photo is required"),
   ticketType: z.enum(["FREE", "VIP", "VVIP"]),
-  numberOfTickets: z.number().min(1).max(10),
+  numberOfTickets: z.number().min(1, "Number of tickets must be at least 1").max(10, "Number of tickets cannot exceed 10"),
   specialRequest: z.string().optional(),
 });
 
@@ -43,7 +43,10 @@ export default function Home() {
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    if (!file) return;
+    if (!file) {
+      setValue("avatarUrl", "");
+      return;
+    }
 
     try {
       const formData = new FormData();
@@ -62,11 +65,16 @@ export default function Home() {
       setValue("avatarUrl", data.secure_url);
     } catch (error) {
       console.error("Error uploading image:", error);
+      setValue("avatarUrl", "");
     }
   };
 
- 
   const onSubmit = (data: FormData) => {
+    if (!data.avatarUrl) {
+      alert("Please upload a profile photo.");
+      return;
+    }
+
     setSubmittedData(data);
     setStep(3);
   };
@@ -194,7 +202,7 @@ export default function Home() {
             className="space-y-4 sm:space-y-6 mt-4 sm:mt-6 border border-[#162b36] p-4 sm:p-6 rounded-2xl"
           >
             <div className="mb-4 sm:mb-6 items-center rounded-2xl p-4 sm:p-6">
-              <label className="block mb-1">Upload Profile Photo</label>
+              <label className="block mb-1">Upload Profile Photo *</label>
               <div
                 className="w-full h-32 rounded-md flex items-center bg-[#041E23] justify-center cursor-pointer relative"
               >
@@ -233,19 +241,20 @@ export default function Home() {
                   />
                 </div>
               </div>
+              {errors.avatarUrl && (
+                <p className="text-red-500 text-sm mt-1">{errors.avatarUrl.message}</p>
+              )}
             </div>
 
             <div className="mb-4 sm:mb-6">
-              <label className="block mb-1">Enter your name</label>
+              <label className="block mb-1">Enter your name *</label>
               <input
                 {...register("fullName")}
                 type="text"
                 className="w-full p-2 bg-[#041E23] rounded-lg border border-[#07373F]"
               />
               {errors.fullName && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.fullName.message}
-                </p>
+                <p className="text-red-500 text-sm mt-1">{errors.fullName.message}</p>
               )}
             </div>
 
@@ -339,7 +348,6 @@ export default function Home() {
                   </div>
 
                   <div className="grid grid-cols-2 gap-4 text-left mb-6">
-                   
                     <div className="border-b border-[#24A0B5]/30 pb-2">
                       <p className="text-gray-400 text-xs mb-1">Enter your name</p>
                       <p className="text-white truncate">{submittedData.fullName}</p>
@@ -349,7 +357,6 @@ export default function Home() {
                       <p className="text-white truncate">{submittedData.email}</p>
                     </div>
 
-                   
                     <div className="border-b border-[#24A0B5]/30 pb-2">
                       <p className="text-gray-400 text-xs mb-1">Ticket Type</p>
                       <p className="text-white">{submittedData.ticketType}</p>
@@ -360,7 +367,6 @@ export default function Home() {
                     </div>
                   </div>
 
-                 
                   {submittedData.specialRequest && (
                     <div className="text-left mb-6">
                       <p className="text-gray-400 text-xs mb-1">Special request?</p>
