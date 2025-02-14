@@ -99,7 +99,7 @@ export default function Home() {
 
       <div className="w-full max-w-lg p-4 sm:p-6 rounded-3xl border border-[#162b36] bg-[#02191D] mx-auto sm:mt-32 shadow-lg">
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
-          <h2 className="text-xl">
+          <h2 className="text-xl md:text-2xl font-alatsi">
             {step === 1
               ? "Ticket Selection"
               : step === 2
@@ -118,7 +118,7 @@ export default function Home() {
         {step === 1 && (
           <div className="space-y-4 sm:space-y-6 mt-4 sm:mt-6 border border-[#162b36] p-4 sm:p-6 rounded-2xl">
             <div className="text-center mb-4 sm:mb-6 items-center rounded-2xl border border-[#162b36] bg-[#041E23] opacity-95 p-4 sm:p-6">
-              <h3 className="text-xl sm:text-2xl font-bold text-[#FAFAFA]">
+              <h3 className="text-xl sm:text-3xl font-bold text-[#FAFAFA] font-jeju-myeongjo">
                 Techember Fest &quot;25
               </h3>
               <p className="text-sm text-gray-400 w-full sm:w-2/3 mx-auto mt-2">
@@ -130,7 +130,7 @@ export default function Home() {
             </div>
 
             <div className="mb-4 sm:mb-6">
-              <h3 className="text-lg">Select Ticket Type:</h3>
+              <h3 className="text-lg ">Select Ticket Type:</h3>
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mt-2 border border-[#162b36] rounded-2xl p-4">
                 {(["FREE", "VIP", "VVIP"] as const).map((type) => (
                   <button
@@ -298,14 +298,13 @@ export default function Home() {
               Check your email for a copy or you can{" "}
               <span className="text-[#FAFAFA]">download</span>
             </p>
-
             <div
               id="ticket"
               style={{
                 background:
                   "radial-gradient(52.52% 32.71% at 50% 97.66%, rgba(36, 160, 181, 0.20) 0%, rgba(36, 160, 181, 0.00) 100%), #072C31",
               }}
-              className="rounded-xl overflow-hidden border border-[#24A0B5]/30 p-5 ticket-border"
+              className="rounded-xl overflow-hidden p-5 ticket-border"
             >
               <div className="relative">
                 <div
@@ -313,7 +312,7 @@ export default function Home() {
                     background:
                       "radial-gradient(52.52% 32.71% at 50% 97.66%, rgba(36, 160, 181, 0.20) 0%, rgba(36, 160, 181, 0.00) 100%), #072C31",
                   }}
-                  className="p-6 rounded-2xl border border-[#24A0B5]/30 backdrop-blur-sm"
+                  className="p-6 rounded-2xl backdrop-blur-sm"
                 >
                   <h3 className="text-2xl font-bold text-white mb-2">
                     Techember Fest &quot;25
@@ -340,24 +339,28 @@ export default function Home() {
                   </div>
 
                   <div className="grid grid-cols-2 gap-4 text-left mb-6">
-                    <div>
+                   
+                    <div className="border-b border-[#24A0B5]/30 pb-2">
                       <p className="text-gray-400 text-xs mb-1">Enter your name</p>
-                      <p className="text-white">{submittedData.fullName}</p>
+                      <p className="text-white truncate">{submittedData.fullName}</p>
                     </div>
-                    <div>
+                    <div className="border-b border-[#24A0B5]/30 pb-2">
                       <p className="text-gray-400 text-xs mb-1">Enter your email *</p>
-                      <p className="text-white">{submittedData.email}</p>
+                      <p className="text-white truncate">{submittedData.email}</p>
                     </div>
-                    <div>
+
+                   
+                    <div className="border-b border-[#24A0B5]/30 pb-2">
                       <p className="text-gray-400 text-xs mb-1">Ticket Type</p>
                       <p className="text-white">{submittedData.ticketType}</p>
                     </div>
-                    <div>
+                    <div className="border-b border-[#24A0B5]/30 pb-2">
                       <p className="text-gray-400 text-xs mb-1">Ticket for :</p>
                       <p className="text-white">{submittedData.numberOfTickets}</p>
                     </div>
                   </div>
 
+                 
                   {submittedData.specialRequest && (
                     <div className="text-left mb-6">
                       <p className="text-gray-400 text-xs mb-1">Special request?</p>

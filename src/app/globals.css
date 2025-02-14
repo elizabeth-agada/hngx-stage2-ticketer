@@ -1,12 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Jeju+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-family: 'Jeju Myeongjo', serif;
+}
+
+code {
+  font-family: 'Alatsi', sans-serif;
   }
   
   @media (min-width: 768px) {
@@ -25,24 +40,24 @@ body {
   @layer utilities {
     .ticket-border {
       position: relative;
-      border: 1px dashed #24A0B5;
+      border: 1px solid #24A0B5;
       border-radius: 1rem;
       clip-path: polygon(
         0 0,
-      100% 0,
-      100% 100%,
-      0 100%,
-      0 0,
-      10px 0,
-      10px 10px,
-      calc(100% - 10px) 10px,
-      calc(100% - 10px) 0,
-      100% 0,
-      100% 100%,
-      calc(100% - 10px) 100%,
-      calc(100% - 10px) calc(100% - 10px),
-      10px calc(100% - 10px),
-      10px 100%
+        100% 0,
+        100% 100%,
+        0 100%,
+        0 0,
+        10px 0,
+        10px 10px,
+        calc(100% - 10px) 10px,
+        calc(100% - 10px) 0,
+        100% 0,
+        100% 100%,
+        calc(100% - 10px) 100%,
+        calc(100% - 10px) calc(100% - 10px),
+        10px calc(100% - 10px),
+        10px 100%
       );
     }
   
@@ -54,7 +69,7 @@ body {
       height: 20px;
       background: #02191D;
       border-radius: 50%;
-      border: 2px dashed #24A0B5;
+      border: 1px solid #24A0B5;
     }
   
     .ticket-border::before {
@@ -67,4 +82,5 @@ body {
       right: -10px;
     }
   }
+
   

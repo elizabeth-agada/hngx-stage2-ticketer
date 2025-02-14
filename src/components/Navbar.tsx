@@ -23,7 +23,7 @@ export default function Navbar() {
           <Image src="/menu.png" alt="Menu" width={20} height={20} />
         </button>
 
-        <div className={`${isMenuOpen ? 'block' : 'hidden'} md:flex md:space-x-6 absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-[#072429] border border-[#02191D] md:bg-transparent p-4 md:p-0`}>
+        <div className={`${isMenuOpen ? 'block' : 'hidden'} md:flex md:space-x-6 absolute md:relative top-16 md:top-0 left-0 w-full font-alatsi md:w-auto bg-[#072429] border border-[#02191D] md:bg-transparent md:text-2xl p-4 md:p-0`}>
           {[
             { name: "Events", path: "/" },
             { name: "My Tickets", path: "/tickets" },
@@ -41,7 +41,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        <button className="md:px-4 p-1.5 md:py-2 flex items-center gap-2 bg-white text-black rounded-lg hover:bg-[#1b8094] transition-colors text-sm">
+        <button className="md:px-4 p-1.5 md:py-2 flex items-center gap-2 bg-white font-alatsi md:text-xl text-black rounded-lg hover:bg-[#1b8094] transition-colors text-sm">
           MY TICKETS
           <Image src="/arrow.png" alt="Logo" width={20} height={20} />
         </button>
