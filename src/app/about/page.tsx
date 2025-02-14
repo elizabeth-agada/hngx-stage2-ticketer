@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import Navbar from "../../components/Navbar";
 import Image from 'next/image';
@@ -11,7 +13,7 @@ const AboutPage = () => {
       <Navbar />
 
       <div className="max-w-3xl mx-auto border border-[#197686] rounded-lg p-8">
-      <header className="flex items-center mb-12 gap-2">
+      <header className="md:flex items-center mb-12 gap-2">
         <h1 className="font-bold">Event Ticket Booking UI</h1>
         <p className="">Open Source Practice Project for Developers</p>
       </header>
@@ -31,29 +33,29 @@ const AboutPage = () => {
         <div className="space-y-6">
           <div>
             <h3 className="text-xl font-semibold mb-2">Ticket Selection</h3>
-            <p className="text-gray-300">
-              <ul className="list-disc list-inside text-gray-300">
+            <div className="text-gray-300">
+              <ul className="md:list-disc list-inside text-gray-300">
                 <li>Users can browse available tickets (Free & Paid).</li>
                 <li>Ticket options are displayed in a list or card view.</li>
                 <li>For Free Tickets → Clicking “Get Free Ticket” proceeds to attendee details.</li>
                 <li>For Paid Tickets → Clicking “Purchase Ticket” would ideally open a payment modal.</li>
               </ul>
-            </p>
+            </div>
           </div>
           <div>
             <h3 className="text-xl font-semibold mb-2">Attendee Details Form</h3>
-            <p className="text-gray-300">
-              <ul className="list-disc list-inside text-gray-300">
+            <div className="text-gray-300">
+              <ul className="md:list-disc list-inside text-gray-300">
                 <li>Users input their Name, Email, and optional Phone Number.</li>
                 <li>Profile picture upload option with preview functionality.</li>
                 <li>Ticket summary is visible to ensure users review their details before submission.</li>
               </ul>
-            </p>
+            </div>
           </div>
           <div>
             <h3 className="text-xl font-semibold mb-2">Payment or Success Page</h3>
-            <p className="text-gray-300">
-              <ul className="list-disc list-inside text-gray-300">
+            <div className="text-gray-300">
+              <ul className="md:list-disc list-inside text-gray-300">
                 <li>If the ticket is free, the user is taken directly to the Ticket Confirmation Page.</li>
                 <li>If the ticket is paid, developers can integrate Stripe, Paystack, or Flutterwave to process payments before showing the confirmation page.</li>
                 <li>Upon successful booking, users should receive:</li>
@@ -61,7 +63,7 @@ const AboutPage = () => {
                 <li>An option to download the ticket as PDF or save it to their device.</li>
                 <li>An email confirmation containing ticket details.</li>
               </ul>
-            </p>
+            </div>
           </div>
         </div>
       </section>
@@ -73,7 +75,7 @@ const AboutPage = () => {
           <div>
             <h3 className="text-xl font-semibold mb-2">Frontend (Next.js or React)</h3>
             <div className="text-gray-300">
-              <ul className="list-disc list-inside text-gray-300">
+              <ul className="md:list-disc list-inside text-gray-300">
                 <li>Component Breakdown:</li>
                 <li>TicketCard.tsx → Displays ticket details</li>
                 <li>AttendeeForm.tsx → Captures user details</li>
@@ -86,18 +88,18 @@ const AboutPage = () => {
           </div>
           <div>
             <h3 className="text-xl font-semibold mb-2">Backend (Optional)</h3>
-            <p className="text-gray-300">
-              <ul className="list-disc list-inside text-gray-300">
+            <div className="text-gray-300">
+              <ul className="md:list-disc list-inside text-gray-300">
                 <li>If persistence is required, a backend can be built using:</li>
                 <li>Node.js & Express or Firebase Functions</li>
                 <li>Database: MongoDB, PostgreSQL, or Firebase Firestore</li>
               </ul>
-            </p>
+            </div>
           </div>
           <div>
             <h3 className="text-xl font-semibold mb-2">Payment Integration</h3>
             <div className="text-gray-300">
-              <ul className="list-disc list-inside text-gray-300">
+              <ul className="md:list-disc list-inside text-gray-300">
                 <li>For paid events, developers should integrate:</li>
                 <li>Stripe Checkout (for international transactions)</li>
                 <li>Paystack or Flutterwave (for African users)</li>
@@ -109,7 +111,7 @@ const AboutPage = () => {
 
       <section className="mb-12">
         <h2 className="text-2xl font-bold mb-4">What You&quot;ll Learn</h2>
-        <ul className="list-disc list-inside text-gray-300">
+        <ul className="md:list-disc list-inside text-gray-300">
           <li>File handling & validation (profile picture uploads).</li>
           <li>Dynamic UI updates based on ticket selection.</li>
           <li>Persisting bookings using local state or a backend.</li>
@@ -128,12 +130,12 @@ const AboutPage = () => {
         <Image src="/enjoy.png" alt="Logo" width={200} height={100} />
         </div>
 
-      <div className="text-center text-gray-400 border border-[#197686] rounded-md w-2/3 mx-auto p-4 flex gap-3 justify-center">
+      <div className="text-center text-gray-400 border border-[#197686] rounded-md md:w-2/3 mx-auto p-4 flex gap-3 justify-center">
         <a href="https://www.figma.com/design/GqUEg26IAJH1Q4WhteDdMO/Event-Ticket-Booking-UI-%E2%80%93-Open-Source-Practice-Project-%F0%9F%8E%9F%EF%B8%8F-(Community)?node-id=0-1&p=f&t=ferB4peixW7HD3rd-0" className="">
-        <button className="border border-[#197686] text-[#24A0B5] px-8 p-2 rounded-md">Design File</button>
+        <button className="border border-[#197686] text-[#24A0B5] md:px-8 p-2 rounded-md">Design File</button>
         </a>
         <a href="https://github.com/elizabeth-agada/hngx-stage2-ticketer" className="">
-        <button className="border border-[#197686] bg-[#24A0B5] text-[#FFFFFF] px-8 p-2 rounded-md">GitHub Code</button>
+        <button className="border border-[#197686] bg-[#24A0B5] text-[#FFFFFF] md:px-8 p-2 rounded-md">GitHub Code</button>
         </a>
       </div>
       </div>
