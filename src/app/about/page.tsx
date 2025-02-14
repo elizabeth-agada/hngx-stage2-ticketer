@@ -6,10 +6,7 @@ import Image from 'next/image';
 
 const AboutPage = () => {
   return (
-    <div style={{
-      background:
-        "radial-gradient(52.52% 32.71% at 50% 97.66%, rgba(36, 160, 181, 0.20) 0%, rgba(36, 160, 181, 0.00) 100%), #02191D",
-    }} className="min-h-screen text-white p-8">
+    <div  className="min-h-screen text-white p-8 bg-[#041E23]">
       <Navbar />
 
       <div className="max-w-3xl mx-auto border border-[#197686] rounded-lg p-8">
@@ -121,9 +118,8 @@ const AboutPage = () => {
       </section>
 
       <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-4">Need Help? Reach Out!</h2>
         <p className="text-gray-300">
-          If you have any questions or need assistance, feel free to reach out to us.
+        Need Help? Reach Out!
         </p>
       </section>
       <div className="flex justify-center text-center mb-3">
