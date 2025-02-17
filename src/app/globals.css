@@ -73,7 +73,7 @@ code {
     }
   
     .ticket-border::before {
-      top: -10px;
+      top: -px;
       left: -10px;
     }
   

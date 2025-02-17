@@ -44,7 +44,7 @@ export default function Navbar() {
 
         <button className="md:px-4 p-1.5 md:py-2 flex items-center gap-2 bg-white font-alatsi md:text-xl text-black rounded-lg hover:bg-[#1b8094] transition-colors text-sm">
           MY TICKETS
-          <Image className="w-12 h-auto" src="/arrow.png" alt="Logo" width={20} height={20} />
+          <Image className="w-5" src="/arrow.png" alt="Logo" width={5} height={5} />
         </button>
       </nav>
     </div>
